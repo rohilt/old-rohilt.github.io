@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Menu, Icon } from 'semantic-ui-react';
+// import { Button, Menu, Icon } from 'semantic-ui-react';
 import './animations/menu-animation.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
 
