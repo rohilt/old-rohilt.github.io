@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Button, Menu, Icon } from 'semantic-ui-react';
+import './animations/menu-animation.css';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
 
-function App() {
+import MainMenu from './components/MainMenu';
+import Home from './components/Home';
+import Projects from './components/Projects';
+
+const App = () => {
+   const [activeItem, setActiveItem] = useState('home');
+   const [homeDisplayed, setHomeDisplayed] = useState(false);
+  // return (
+    
+  // );
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <ReactCSSTransitionGroup
+      transitionName="example"
+      transitionAppear={true}
+      transitionAppearTimeout={7000}
+      transitionEnter={false}
+      transitionLeave={false}>
+      <MainMenu activeItem={activeItem} setActiveItem={setActiveItem}/>
+    </ReactCSSTransitionGroup>
+    {activeItem === 'home' ? <Home homeDisplayed={homeDisplayed} setHomeDisplayed={setHomeDisplayed}/> : <div></div>}
+    {activeItem === 'projects' ? <Projects /> : <div></div>}
     </div>
+
   );
 }
 
