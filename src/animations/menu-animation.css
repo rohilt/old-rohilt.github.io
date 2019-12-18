@@ -1,10 +1,31 @@
-.example-appear {
-    opacity: 0.01;
-  }
-  
-  .example-appear.example-appear-active {
-    opacity: 1;
-    transition: opacity 1.5s ease-in;
-    transition-delay: 5s;
+.menu-bar-appear {
+    opacity: 0;
+  }  
+.menu-bar-appear.menu-bar-appear-active {
+  opacity: 1;
+  transition: opacity 1.5s ease-in;
+  transition-delay: 5s;
+}
 
-  }
+.page-switch-enter {
+  opacity: 0;
+  transform: scale(1.25);
+}
+
+.page-switch-enter.page-switch-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 500ms;
+  transition-delay: 100ms;
+}
+
+.page-switch-leave {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.page-switch-leave.page-switch-leave-active {
+  opacity: 0;
+  transform: scale(1);
+  transition: all 100ms ease-in;
+}

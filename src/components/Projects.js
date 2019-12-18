@@ -1,12 +1,12 @@
 import React from 'react';
-import { Tab } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
 
 const Projects = () => {
   return (
-    <div className="Projects">
-      These are some of the projects I have worked on.
-    </div>
+    <Container textAlign='center'>
+      Still working on this part of the website. 
+    </Container>
   );
 }
 
